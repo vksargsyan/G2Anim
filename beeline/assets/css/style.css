@@ -1,0 +1,835 @@
+/** Defaults */
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #CCCCCC;
+  background: #ffffff;
+}
+
+.Container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.Inner {
+  max-width: 1600px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  height: 120px;
+}
+
+.Scene--first .Inner--left,
+.Scene--first .Inner--center,
+.Scene--first .Inner--right {
+  width: 33.3333%;
+  float: left;
+  position: relative;
+  height: 120px;
+}
+
+
+/** Yellow Box Animation */
+.js-box--yellow {
+  position: absolute;
+  height: 60px;
+  top: 39px;
+  background: linear-gradient(to right, #faa724, #ffe710);
+  overflow: hidden;
+
+  animation-name: yellow-box-animation;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes yellow-box-animation {
+  5% {
+    opacity: 1;
+    width: 0;
+  }
+
+  10% {
+    width: 100%;
+  }
+
+  75% {
+    opacity: 1;
+    width: 100%;
+  }
+
+  80% {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+/** Internet Today Animation */
+.js-text--internet-today {
+  position: absolute;
+  right: 10px;
+  top: 150px;
+  opacity: 0;
+
+  animation-name: internet-today-animation;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+/** Starting at 1s */
+@keyframes internet-today-animation {
+  8% {
+    top: 150px;
+    opacity: 0;
+  }
+
+  13% {
+    top: 10px;
+    opacity: 1;
+  }
+
+  90% {
+    top: 10px;
+    opacity: 1;
+  }
+}
+
+.js-box--yellow__inner {
+  position: relative;
+}
+
+
+/** Girl Animation */
+.js-image--girl {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 120px;
+  opacity: 0;
+
+  animation-name: girl-animation;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes girl-animation {
+  5% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+}
+
+
+/** Prepaid Animation */
+.js-text--prepaid {
+  position: absolute;
+  right: 142px;
+  opacity: 0;
+  top: 12px;
+
+  animation-name: prepaid-animation;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes prepaid-animation {
+  14% {
+    top: -50px;
+    opacity: 0;
+  }
+
+  21% {
+    top: 12px;
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+}
+
+/** Daily Animation */
+.js-text--daily {
+  position: absolute;
+  left: 10px;
+  opacity: 0;
+  top: 56px;
+
+  animation-name: daily-animation;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes daily-animation {
+  22% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  27% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+}
+
+.js-text--1gb {
+  position: absolute;
+  left: 160px;
+  top: -60px;
+  opacity: 0;
+
+  animation-name: _1gb-animation;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes _1gb-animation {
+  30% {
+    opacity: 0;
+    top: -60px;
+  }
+
+  32% {
+    opacity: 1;
+    top: calc(50% - 26px);
+  }
+
+  75% {
+    opacity: 1;
+    top: calc(50% - 26px);
+  }
+
+  80% {
+    opacity: 0;
+    top: calc(50% - 26px);
+  }
+}
+
+.js-text--slesh {
+  position: absolute;
+  left: 260px;
+  top: calc(50% - 26px);
+  opacity: 0;
+  transform: scale(0.5);
+
+  animation-name: slesh-animation;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slesh-animation {
+  30% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  32% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  75% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  80% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.js-text--200 {
+  position: absolute;
+  left: 290px;
+  top: 180px;
+  opacity: 0;
+
+  animation-name: _200-animation;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes _200-animation {
+  30% {
+    opacity: 0;
+    top: 180px;
+  }
+
+  32% {
+    opacity: 1;
+    top: calc(50% - 26px);
+  }
+
+  75% {
+    opacity: 1;
+    top: calc(50% - 26px);
+  }
+
+  80% {
+    opacity: 0;
+    top: calc(50% - 26px);
+  }
+}
+
+.js-text--amd {
+  position: absolute;
+  left: 385px;
+  top: 30px;
+  opacity: 0;
+  transform: rotate(360deg);
+
+  animation-name: amd-animation;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes amd-animation {
+  35% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+
+  40% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+}
+
+.js-text--details {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translate(-100%, 0);
+  z-index: 2;
+
+  animation-name: details-animation;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes details-animation {
+  42% {
+    top: -40px;
+    transform: translate(-100%, 0);
+  }
+
+  47% {
+    top: 50%;
+    transform: translate(-100%, -50%);
+  }
+
+  75% {
+    opacity: 1;
+    top: 50%;
+    transform: translate(-100%, -50%);
+  }
+
+  80% {
+    opacity: 0;
+    top: -40px;
+    transform: translate(-100%, 0);
+  }
+}
+
+.Scene--second {
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  z-index: 3;
+
+  animation-name: scene-second-animation;
+  animation-iteration-count: infinite;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes scene-second-animation {
+  60% {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  65% {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  95% {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  100% {
+    background: rgba(255, 255, 255, 0);
+  }
+}
+
+.js-image--logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 4;
+
+  animation-name: logo-animation;
+  animation-iteration-count: infinite;
+  animation-duration: 13s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes logo-animation {
+  67% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  82% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  95% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/** Media Queries */
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1280px) {
+  .js-text--internet-today {
+    width: 300px;
+  }
+
+  .js-text--prepaid {
+    right: 100px;
+  }
+
+
+  .js-text--details {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+  
+    animation-name: details-animation-1280;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes details-animation-1280 {
+    42% {
+      top: -40px;
+      transform: translate(-50%, 0);
+    }
+  
+    47% {
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    75% {
+      opacity: 1;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    80% {
+      opacity: 0;
+      top: -40px;
+      transform: translate(-50%, 0);
+    }
+  }
+}
+
+@media only screen and (max-width : 1120px) {
+  .js-image--girl {
+    right: -30px;
+  }
+
+  .js-text--daily {
+    left: calc(50% - 50px);
+    width: 120px;
+    top: 10px;
+  }
+
+  .js-text--1gb {
+    opacity: 0;
+    top: 50px;
+    left: calc(50% - 100px);
+
+    animation-name: _1gb-animation-1120;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes _1gb-animation-1120 {
+    30% {
+      opacity: 0;
+      top: -50px;
+    }
+  
+    32% {
+      opacity: 1;
+      top: calc(50% - 16px);
+    }
+  
+    75% {
+      opacity: 1;
+      top: calc(50% - 16px);
+    }
+  
+    80% {
+      opacity: 0;
+      top: calc(50% - 16px);
+    }
+  }
+
+  .js-text--slesh {
+    top: 45px;
+    left: 50%;
+  }
+
+  .js-text--200 {
+    top: 170px;
+    left: calc(50% + 30px);
+    opacity: 0;
+
+    animation-name: _200-animation-1120;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes _200-animation-1120 {
+    30% {
+      opacity: 0;
+      top: 170px;
+    }
+  
+    32% {
+      opacity: 1;
+      top: calc(50% - 16px);
+    }
+  
+    75% {
+      opacity: 1;
+      top: calc(50% - 16px);
+    }
+  
+    80% {
+      opacity: 0;
+      top: calc(50% - 16px);
+    }
+  }
+
+  .js-text--amd {
+    top: 50px;
+    left: calc(50% + 130px);
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+  .js-text--internet-today {
+    width: calc(90% - 10px);
+  }
+
+  .js-image--girl {
+    right: -40px;
+  }
+
+  .js-box--yellow {
+    height: 50px;
+  }
+
+  .js-text--prepaid {
+    left: auto;
+    right: 10px;
+  }
+
+  .js-text--details {
+    width: 180px;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .js-text--prepaid {
+    width: 180px;
+  }
+
+  .js-box--yellow {
+    height: 44px;
+  }
+
+  .js-text--daily {
+    width: 100px;
+  }
+
+  .js-text--1gb {
+    width: 60px;
+  }
+
+  .js-text--slesh {
+    width: 20px;
+  }
+
+  .js-text--200 {
+    width: 54px;
+  }
+
+  
+
+  .js-text--1gb {
+    position: absolute;
+    left: 50%;
+    transform: translate(-72px, 0);
+    top: -60px;
+    opacity: 0;
+  
+    animation-name: _1gb-animation-768;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes _1gb-animation-768 {
+    30% {
+      opacity: 0;
+      top: -60px;
+    }
+  
+    32% {
+      opacity: 1;
+      top: 45px;
+    }
+  
+    75% {
+      opacity: 1;
+      top: 45px;
+    }
+  
+    80% {
+      opacity: 0;
+      top: 45px;
+    }
+  }
+  
+  .js-text--slesh {
+    position: absolute;
+    left: 50%;
+    transform: translate(-69px, 0) scale(0.5);
+    top: 45px;
+    opacity: 0;
+
+    animation-name: slesh-animation-768;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes slesh-animation-768 {
+    30% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  
+    32% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    75% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    80% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+  
+  .js-text--200 {
+    position: absolute;
+    left: 50%;
+    transform: translate(27px, 0);
+    top: 180px;
+    opacity: 0;
+  
+    animation-name: _200-animation-768;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes _200-animation-768 {
+    30% {
+      opacity: 0;
+      top: 180px;
+    }
+  
+    32% {
+      opacity: 1;
+      top: 45px;
+    }
+  
+    75% {
+      opacity: 1;
+      top: 45px;
+    }
+  
+    80% {
+      opacity: 0;
+      top: 45px;
+    }
+  }
+  
+  .js-text--amd {
+    position: absolute;
+    left: 50%;
+    transform: translate(85px, 0) rotate(360deg);
+    top: 40px;
+    opacity: 0;
+    width: 15px;
+    height: 15px;
+  
+    animation-name: amd-animation-768;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes amd-animation-768 {
+    35% {
+      opacity: 0;
+      transform: translate(85px, 0) rotate(0deg);
+    }
+  
+    40% {
+      opacity: 1;
+      transform: translate(85px, 0) rotate(360deg);
+    }
+  
+    75% {
+      opacity: 1;
+    }
+  
+    80% {
+      opacity: 0;
+    }
+  }
+}
+
+@media only screen and (max-width : 593px) {
+  .Scene--first .Inner--left,
+  .Scene--first .Inner--center {
+    width: 50%;
+  }
+
+  .Scene--first .Inner--right {
+    width: 0;
+  }
+
+  .js-text--1gb,
+  .js-text--slesh,
+  .js-text--200,
+  .js-text--amd,
+  .js-text--daily {
+    z-index: 2;
+  }
+
+  .js-text--details {
+    display: none;
+  }
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+
+}
