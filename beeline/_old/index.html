@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script src="/html.js"></script>
+    <title>Beeline</title>
+    <script type="text/javascript">
+
+        onload = function () {
+
+            var	close = document.getElementById('close');
+
+            close.addEventListener("click", function( event ) {
+                console.log('click close');
+                parent.postMessage('hideSG', '*');
+                event.stopPropagation()
+
+            });
+        };
+
+
+    </script>
+    <style>
+        html { width:100%; height: 100%; }
+        body { width: 100%; height:120px; margin: 0; padding: 0; box-sizing: border-box; border:solid 1px #CCCCCC; background: #ffffff; }
+        .container { width: 100%; height:120px; background: #000; display: none; position: relative; overflow: hidden; box-sizing: border-box; }
+        .logo { width:89px; height:70px; position: absolute; left:50%; margin-left: -45px; top:25px; display: none; }
+        a { display: block; width: 100%; height: 100%; overflow: hidden; }
+        img { border:none; }
+        .inner { max-width:1400px; width:100%; position: relative; margin:0 auto; height: 120px; background: url('img/bg.png') no-repeat center center; }
+        #close { position: absolute; right: 10px; top:10px; font-family: Arial; }
+
+        .girl { position: absolute; display: none; width:167px; height:168px; top:-24px; left:0; }
+        .phone { position: absolute; display: none; width:96px; height:100px; bottom:-100px; left:50%; }
+        .apple { position: absolute; display: none; width:10px; height:11px; top:20px; left:50%; opacity:0; }
+        .iphone { position: absolute; display: none; width:119px; height:33px; top:20px; left:50%; opacity: 0; }
+        .t1 { position: absolute; display: none; width:68px; height:18px; bottom:35px; left:50%; opacity: 0; }
+        .t2 { position: absolute; display: none; width:127px; height:18px; bottom:35px; left:50%; opacity: 0; margin-left: 70px }
+        .t3 { position: absolute; display: none; width:175px; height:18px; bottom:14px; left:50%; opacity: 0; }
+
+        .yellow { position: absolute; display: none; overflow: hidden; width:0px; height:60px; bottom:29px; right:10px; background: url('img/yellow.png') no-repeat left center; }
+        .t4 { position: absolute; display: none; width:92px; height:10px; top:7px; left:-92px; }
+        .t5 { position: absolute; display: none; width:111px; height:31px; bottom:-31px; left:20px; }
+        .t6 { position: absolute; display: none; width:11px; height:13px; top:24px; left:128px; opacity: 0; }
+        .round { position: absolute; display: none; width:19px; height:18px; top:-18px; left:137px; }
+
+        .plus { position: absolute; display: none; width:20px; height:19px; top:87px; left:50%; opacity:0; margin-left: -50px; }
+        .gift { position: absolute; display: none; width:52px; height:51px; bottom:-100px; left:50%; margin-left: -32px; transform: rotate(0deg); transition: all 0.3s; }
+        .gift.toLeft { transform-origin: bottom left; transform: rotate(-10deg); }
+        .gift.toRight { transform-origin: bottom right; transform: rotate(10deg); }
+        .t7 { position: absolute; display: none; width:69px; height:19px; bottom:33px; left:50%; opacity: 0; margin-left: 25px; }
+        .t8 { position: absolute; display: none; width:77px; height:18px; bottom:13px; left:50%; opacity: 0; margin-left: 30px; }
+        .btn { position: absolute; display: none; width:208px; height:40px; bottom:-70px; right:10px; }
+
+        .spin { animation-name: spin; animation-duration: 900ms; animation-iteration-count: infinite; animation-timing-function: linear; }
+
+        @keyframes spin {
+            from {transform:rotate(0deg);}
+            to {transform:rotate(360deg);}
+        }
+
+        @media only screen and (max-width: 500px) {
+            .girl { display:none !important; }
+            .phone { width:80px; height: 83px; left: 2%; margin-left: -25px; }
+            .apple { margin-left: -140px; transform: scale(0.6); transform-origin: right; }
+            .iphone { margin-left:-107px; transform: scale(0.6); transform-origin: left; }
+            .t1 { margin-left:-65px; width:54px; height:14px; }
+            .t2 { margin-left:0px; width:102px; height:14px; }
+            .t3 { margin-left:-65px; width:140px; height:14px; }
+            .yellow { transform: scale(0.73); transform-origin: right; margin-bottom: 27px; margin-right: 45px; }
+            .plus { margin-left:-90px; transform: scale(0.7); transform-origin: left; }
+            .gift { margin-left: -72px; transform: scale(0.7); transform-origin: left; }
+            .t7 { margin-left:-23px; transform: scale(0.7); transform-origin: left; }
+            .t8 { margin-left:-25px; transform: scale(0.7); transform-origin: left; }
+            .btn { transform: scale(0.65); transform-origin: right;margin-right: 39px;margin-bottom: 24px; }
+        }
+
+        @media only screen and (min-width: 501px) and (max-width: 700px) {
+            .girl { left:-30px; }
+            .phone { width:80px; height: 83px; left: 15%; }
+            .apple { margin-left: -90px; }
+            .iphone { margin-left:-54px;  }
+            .t1 { margin-left:-85px; width:54px; height:14px; }
+            .t2 { margin-left:-20px; width:102px; height:14px; }
+            .t3 { margin-left:-85px; width:140px; height:14px; }
+            .yellow { transform: scale(0.8); transform-origin: right; }
+            .plus { margin-left:-85px; }
+            .gift { margin-left: -60px; }
+            .t7 { margin-left:2px; }
+            .t8 { margin-left:0px; }
+            .btn { transform: scale(0.7); transform-origin: right; }
+        }
+
+        @media only screen and (min-width: 701px) and (max-width: 1000px) {
+            .phone { width:96px; height: 100px; left: 20%; }
+            .apple { margin-left: -88px; }
+            .iphone { margin-left:-52px;  }
+            .t1 { margin-left:-85px; width:54px; height:14px; }
+            .t2 { margin-left:-20px; width:102px; height:14px; }
+            .t3 { margin-left:-85px; width:140px; height:14px; }
+            .plus { margin-left:-85px; }
+            .gift { margin-left: -60px; }
+            .t7 { margin-left:2px; }
+            .t8 { margin-left:0px; }
+        }
+
+        @media only screen and (min-width: 1001px) and (max-width: 1200px) {
+          .girl { left: 5% }
+            .phone { width:96px; height: 100px; left: 15%; }
+            .apple { margin-left: -198px; margin-top: 23px; }
+            .iphone { margin-left:-162px; margin-top: 23px;}
+            .t1 { margin-left:40px; width:54px; height:14px; margin-bottom: 30px; }
+            .t2 { margin-left:100px; width:102px; height:14px; margin-bottom: 30px;}
+            .t3 { margin-left:40px; width:140px; height:14px; margin-bottom: 30px;}
+            .plus { margin-left:25px; margin-top: -23px;}
+            .gift { margin-left: 60px; margin-bottom: 24px; }
+            .t7 { margin-left:142px; margin-bottom: 25px; }
+            .t8 { margin-left:138px; margin-bottom: 23px; }
+            .yellow { right:5%; }
+            .btn { right:5%; }
+        }
+
+        @media only screen and (min-width: 1201px) {
+          .girl { left: 12% }
+            .phone { width:96px; height: 100px; left: 22%; }
+            .apple { margin-left: -198px; margin-top: 23px; }
+            .iphone { margin-left:-162px; margin-top: 23px;}
+            .t1 { margin-left:40px; width:54px; height:14px; margin-bottom: 30px; }
+            .t2 { margin-left:100px; width:102px; height:14px; margin-bottom: 30px;}
+            .t3 { margin-left:40px; width:140px; height:14px; margin-bottom: 30px;}
+            .plus { margin-left:25px; margin-top: -23px;}
+            .gift { margin-left: 60px; margin-bottom: 24px; }
+            .t7 { margin-left:142px; margin-bottom: 25px; }
+            .t8 { margin-left:138px; margin-bottom: 23px; }
+            .yellow { right:15%; }
+            .btn { right:10%; }
+        }
+    </style>
+</head>
+<body>
+<a target="_blank" onclick="ar_callLink({target: '_blank', other: '//ya.ru', event: event})">
+    <div class="container">
+        <div class="inner">
+          <div class="yellow">
+            <img src="img/round.png" class="round">
+            <img src="img/t4.png" class="t4">
+            <img src="img/t5.png" class="t5">
+            <img src="img/t6.png" class="t6">
+          </div>
+          <img src="img/t1.png" class="t1">
+          <img src="img/t2.png" class="t2">
+          <img src="img/t3.png" class="t3">
+          <img src="img/girl.png" class="girl">
+          <img src="img/phone.png" class="phone">
+          <img src="img/apple.png" class="apple">
+          <img src="img/iphone.png" class="iphone">
+
+          <img src="img/plus.png" class="plus spin">
+          <img src="img/gift.png" class="gift">
+          <img src="img/t7.png" class="t7">
+          <img src="img/t8.png" class="t8">
+          <img src="img/btn.png" class="btn">
+        </div>
+    </div>
+    <img src="./img/logo.png" class="logo">
+</a>
+<span id="close"><img src="img/close.png"></span>
+<script type="application/javascript">
+    $(document).ready(function() {
+        anim();
+    });
+    function anim() {
+        $('.container').fadeIn(function() {
+          $('.girl').show().animate({ 'width': '119px', 'height': '120px', 'top': '0' });
+          $('.phone').fadeIn().animate({ 'bottom': '0px' }, 1000, function() {
+              $('.iphone').show().animate({'top': '20px', 'opacity': '1'});
+              $('.apple').show().animate({'top': '20px', 'opacity': '1', 'width':'29px', 'height':'33px'}, function() {
+                $('.t1').show().animate({'bottom': '30px', 'opacity': '1'});
+                $('.t3').show().delay(400).animate({'bottom': '10px', 'opacity': '1'});
+                $('.t2').show().delay(400).animate({'bottom': '30px', 'opacity': '1'}, function() {
+                    $('.yellow').show().delay(100).animate({ 'width': '166px' }, function() {
+                      $('.t4').show().animate({'left': '20px'}, 300);
+                      $('.t5').show().delay(100).animate({'bottom': '9px'}, 300);
+                      $('.round').show().delay(250).animate({'top': '21px'}, 300, function() {
+                        $('.t6').show().animate({'left': '141px', 'opacity': '1'}, 200, function() {
+                          $('.t1, .t2').fadeOut();
+                            $('.t3').fadeOut(function() {
+                              $('.plus').show().delay(500).animate({'opacity': '1', 'top':'79px'}, 300, function() {
+                                $(this).removeClass('spin');
+                                $('.gift').show().animate({'bottom': '9px'}, function() {
+                                  setTimeout(function() {
+                                    $('.gift').addClass('toLeft');
+                                    setTimeout(function() {
+                                        $('.gift').removeClass('toLeft').addClass('toRight');
+                                        setTimeout(function() {
+                                            $('.gift').removeClass('toRight');
+                                            setTimeout(function() {
+                                                $('.gift').removeClass('toRight');
+                                                $('.t7').show().delay(300).animate({'bottom': '33px', 'opacity': '1'});
+                                                $('.t8').show().delay(700).animate({'bottom': '13px', 'opacity': '1'}, function() {
+                                                  $('.yellow').delay(500).animate({ 'top': '-100px' });
+                                                  $('.btn').show().delay(800).animate({ 'bottom': '35px' }, 300);
+
+                                                  setTimeout(function() {
+                                                    $('.girl').fadeOut(200);
+                                                    $('.container').delay(150).fadeOut(function() {
+                                                      $('.logo').css('opacity', '1').fadeIn(function() {
+                                                          $(this).delay(1000).fadeOut(function() {
+                                                              $('div, img').stop(true, true).hide();
+                                                              $('img, div').attr('style', '');
+                                                              anim();
+                                                          });
+                                                      });
+                                                    });
+                                                  }, 2500);
+                                                });
+                                            }, 300);
+                                        }, 300);
+                                    }, 300);
+                                  }, 300);
+                                });
+                              });
+                            });
+                        });
+                      });
+                    });
+                });
+              });
+          });
+        });
+    }
+</script>
+</body>
+</html>

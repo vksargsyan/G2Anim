@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Beeline</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    
+  </style>
+</head>
+<body>
+
+  <div class="Container">
+    <div class="Inner">
+      <div class="Scene--first">
+        <div class="Inner--left">
+          <img src="./assets/img/prepaid.png" alt="prepaid text" class="js-text--prepaid">
+          <div class="box--yellow">
+            <img src="./assets/img/internet-today.png" alt="internet today text" class="js-text--internet-today">
+          </div>
+        </div>
+        <div class="Inner--center">
+          <img src="./assets/img/daily.png" alt="daily" class="js-text--daily">
+          <img src="./assets/img/1gb.png" alt="1GB" class="js-text--1gb">
+          <img src="./assets/img/slash.png" alt="slash" class="js-text--slash">
+          <img src="./assets/img/amd.png" alt="AMD" class="js-text--amd">
+        </div>
+        <div class="Inner--right">
+          <div class="btn--yellow">
+            <img src="./assets/img/details.png" alt="details" class="js-text--details">
+          </div>
+          <img src="./assets/img/girl.png" alt="girl" class="js-image--girl">
+        </div>
+      </div>
+      <div class="Scene--second">
+        <img src="./assets/img/logo.png" alt="logo" class="js-image--logo">
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script  type="application/javascript">
+    $(document).ready(function() {
+      var anim = new G2Anim0718();
+      anim.run();
+    });
+
+    function G2Anim0718() {
+      return this.__construct__();
+    };
+
+    G2Anim0718.prototype = {
+      __construct__: function() {
+        this.txtPrepaid = $('.js-text--prepaid');
+        this.txtInetToday = $('.js-text--internet-today');
+        this.txtDaily = $('.js-text--daily');
+        this.txt1gb = $('.js-text--1gb');
+        this.txtSlash = $('.js-text--slash');
+        this.txtAmd = $('.js-text--amd');
+        this.txtdetails = $('.js-text--details');
+      },
+      run: function() {
+
+      }
+    }
+
+
+  </script>
+</body>
+</html>
