@@ -26,7 +26,7 @@ body {
 .js-btn--close {
   position: fixed;
   right: 10px;
-  top: 10px;
+  bottom: 10px;
   background: rgba(255, 255, 255, 0.5);
   width: 30px;
   height: 30px;
@@ -841,7 +841,7 @@ body {
   .animated .js-text--amd {
     position: absolute;
     left: 50%;
-    transform: translate(85px, 0) rotate(360deg);
+    transform: translate(85px, 0) rotate(0deg);
     top: 40px;
     opacity: 0;
     width: 15px;
@@ -857,32 +857,44 @@ body {
   @keyframes amd-animation-768 {
     35% {
       opacity: 0;
-      transform: rotate(0deg);
+      transform: translate(85px, 0) rotate(0deg);
     }
   
     40% {
       opacity: 1;
-      transform: rotate(360deg);
+      transform: translate(85px, 0) rotate(360deg);
     }
   
     75% {
       opacity: 1;
+      transform: translate(85px, 0) rotate(360deg);
     }
   
     80% {
       opacity: 0;
+      transform: translate(85px, 0) rotate(0deg);
     }
   }
 }
 
 @media only screen and (max-width : 593px) {
-  .Scene--first .Inner--left,
-  .Scene--first .Inner--center {
+  .Scene--first .Inner--left {
     width: 50%;
   }
 
+  .js-text--prepaid {
+    display: none;
+  }
+
+  .animated .js-box--yellow {
+    height: 40px;
+    top: 10px;
+  }
+
+  .Scene--first .Inner--center,
   .Scene--first .Inner--right {
     width: 0;
+    position: static;
   }
 
   .animated .js-text--1gb,
@@ -893,72 +905,220 @@ body {
     z-index: 2;
   }
 
-  .animated .js-text--details {
-    display: none;
+  .animated .js-text--daily {
+    left: 10px;
+    top: 62px;
+    transform: translate(0, 0);
+    width: 12%;
+
+    animation-name: daily-animation-593;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
   }
 
-  .animated .js-image--girl {
-    opacity: 0.5;
+  @keyframes daily-animation-593 {
+    22% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  
+    27% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    75% {
+      opacity: 1;
+    }
+  
+    80% {
+      opacity: 0;
+    }
+  }
 
-    animation-name: girl-animation-593;
+  .animated .js-text--1gb {
+    left: calc(12% + 20px);
+    top: -34px;
+    transform: translate(0, 0);
+
+    animation-name: _1gb-animation-593;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    width: 30px;
+  }
+
+  @keyframes _1gb-animation-593 {
+    30% {
+      opacity: 0;
+      top: -30px;
+    }
+  
+    32% {
+      opacity: 1;
+      top: 60px;
+    }
+  
+    75% {
+      opacity: 1;
+      top: 60px;
+    }
+  
+    80% {
+      opacity: 0;
+      top: 60px;
+    }
+  }
+
+  .animated .js-text--slesh {
+    left: calc(12% + 55px);
+    transform: translate(-69px, 0) scale(0.5);
+    top: 62px;
+    opacity: 0;
+    width: 8px;
+
+    animation-name: slesh-animation-593;
     animation-duration: 13s;
     animation-fill-mode: forwards;
     animation-timing-function: ease;
     animation-iteration-count: infinite;
   }
-
-  @keyframes girl-animation-593 {
-    to {
-      opacity: 0.5;
-    }
-  }
-}
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {
-  .Inner--left {
-    width: 45%;
-  }
-
-  .Inner--right {
-    width: 55%;
-  }
-
-  .animated .js-text--prepaid {
-    width: 150px;
-  }
-
-  .animated .js-text--1gb {
-    transform: translate(-75px, 0);
-  }
-
-  .animated .js-text--slesh {
-    left: calc(50% - 10px);
-  }
-
-  .animated .js-text--200 {
-    transform: translate(15px, 0);
-  }
-
-  .animated .js-text--amd {
-    transform: translate(68px, 0) rotate(360deg);
-
-    animation-name: amd-animation-480;
-  }
-
-  @keyframes amd-animation-480 {
-    35% {
+  
+  @keyframes slesh-animation-593 {
+    30% {
       opacity: 0;
-      transform: translate(68px, 0) rotate(0deg);
+      transform: scale(0.5);
     }
-    40% {
+  
+    32% {
       opacity: 1;
-      transform: translate(68px, 0) rotate(360deg);
+      transform: scale(1);
     }
+  
     75% {
       opacity: 1;
+      transform: scale(1);
     }
+  
     80% {
       opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+  
+  .animated .js-text--200 {
+    left: calc(12% + 68px);
+    transform: translate(0, 0);
+    top: 180px;
+    opacity: 0;
+    width: 28px;
+  
+    animation-name: _200-animation-593;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes _200-animation-593 {
+    30% {
+      opacity: 0;
+      top: 180px;
+    }
+  
+    32% {
+      opacity: 1;
+      top: 60px;
+    }
+  
+    75% {
+      opacity: 1;
+      top: 60px;
+    }
+  
+    80% {
+      opacity: 0;
+      top: 60px;
+    }
+  }
+  
+  .animated .js-text--amd {
+    position: absolute;
+    left: calc(12% + 100px);
+    transform: translate(0, 0) rotate(0deg);
+    top: 60px;
+    opacity: 0;
+    width: 10px;
+    height: 10px;
+  
+    animation-name: amd-animation-593;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes amd-animation-593 {
+    35% {
+      opacity: 0;
+      transform: translate(0, 0) rotate(0deg);
+    }
+  
+    40% {
+      opacity: 1;
+      transform: translate(0, 0) rotate(360deg);
+    }
+  
+    75% {
+      opacity: 1;
+      transform: translate(0, 0) rotate(360deg);
+    }
+  
+    80% {
+      opacity: 0;
+      transform: translate(0, 0) rotate(0deg);
+    }
+  }
+
+  .animated .js-text--details {
+    position: absolute;
+    top: auto;
+    bottom: -30px;
+    left: 10px;
+    transform: translate(0, 0);
+    z-index: 2;
+  
+    animation-name: details-animation-593;
+    animation-duration: 13s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    width: 130px;
+  }
+  
+  @keyframes details-animation-593 {
+    42% {
+      bottom: -30px;
+      transform: translate(0, 0);
+    }
+  
+    47% {
+      bottom: 10px;
+      transform: translate(0, 0);
+    }
+  
+    75% {
+      opacity: 1;
+      bottom: 10px;
+      transform: translate(0, 0);
+    }
+  
+    80% {
+      opacity: 0;
+      bottom: -30px;
+      transform: translate(0, 0);
     }
   }
 }
