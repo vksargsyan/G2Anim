@@ -685,11 +685,9 @@ body {
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-
   .animated .js-text--internet-today {
-    width: 230px;
+    width: calc(90% - 20px);
   }
-
   .animated .js-image--girl {
     right: -40px;
   }
@@ -725,7 +723,7 @@ body {
     position: absolute;
     top: 150px;
     opacity: 0;
-    width: 200px;
+    width: 190px;
 
     animation-name: internet-today-animation-768;
     animation-duration: 13s;
