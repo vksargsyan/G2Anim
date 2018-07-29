@@ -15,6 +15,7 @@ body {
   padding: 0;
   border: solid 1px #CCCCCC;
   background: #ffffff;
+  position: relative;
 }
 
 .Container {
@@ -24,7 +25,7 @@ body {
 }
 
 .js-btn--close {
-  position: fixed;
+  position: absolute;
   right: 10px;
   bottom: 10px;
   background: rgba(255, 255, 255, 0.5);
@@ -115,6 +116,7 @@ body {
   right: 10px;
   top: 150px;
   opacity: 0;
+  transform: translate(0, -50%);
 
   animation-name: internet-today-animation;
   animation-duration: 13s;
@@ -127,20 +129,24 @@ body {
   8% {
     top: 150px;
     opacity: 0;
+    transform: translate(0, -50%);
   }
 
   13% {
-    top: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
     opacity: 1;
   }
 
   90% {
-    top: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
     opacity: 1;
   }
 }
 
 .js-box--yellow__inner {
+  height: 100%;
   position: relative;
 }
 
@@ -681,7 +687,7 @@ body {
 @media only screen and (max-width : 992px) {
 
   .animated .js-text--internet-today {
-    width: calc(90% - 10px);
+    width: calc(100% - 20px);
   }
 
   .animated .js-image--girl {
@@ -887,6 +893,7 @@ body {
   }
 
   .animated .js-box--yellow {
+    z-index: 3;
     height: 40px;
     top: 10px;
   }
@@ -905,9 +912,14 @@ body {
     z-index: 2;
   }
 
+  .animated .js-text--internet-today {
+    left: 10px;
+    right: auto;
+  }
+
   .animated .js-text--daily {
     left: 10px;
-    top: 62px;
+    top: 64px;
     transform: translate(0, 0);
     width: 12%;
 
