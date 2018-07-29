@@ -9,69 +9,64 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-
-  <div class="Container">
-    <div class="Inner">
-      <div class="Scene--first">
-        <div class="Inner--left">
-          <img src="./assets/img/prepaid.png" alt="prepaid text" class="js-text--prepaid">
-          <div class="js-box--yellow">
-            <div class="js-box--yellow__inner">
-              <img src="./assets/img/internet-today.png" alt="internet today text" class="js-text--internet-today">
+  <a target="_blank" onclick="ar_callLink({target: '_blank', other: '//ya.ru', event: event})">
+    <div class="Container animated">
+      <div class="Inner">
+        <div class="Scene--first">
+          <div class="Inner--left">
+            <img src="./assets/img/prepaid.png" alt="prepaid text" class="js-text--prepaid">
+            <div class="js-box--yellow">
+              <div class="js-box--yellow__inner">
+                <img src="./assets/img/internet-today.png" alt="internet today text" class="js-text--internet-today">
+              </div>
             </div>
           </div>
-        </div>
-        <div class="Inner--center">
-          <img src="./assets/img/daily.png" alt="daily" class="js-text--daily">
-          <div class="text-group">
-            <div class="text-group__inner">
-              <img src="./assets/img/1gb.png" alt="1GB" class="js-text--1gb">
-              <img src="./assets/img/slesh.png" alt="slash" class="js-text--slesh">
-              <img src="./assets/img/200.png" alt="200" class="js-text--200">
-              <img src="./assets/img/amd.png" alt="AMD" class="js-text--amd">
+          <div class="Inner--center">
+            <img src="./assets/img/daily.png" alt="daily" class="js-text--daily">
+            <div class="text-group">
+              <div class="text-group__inner">
+                <img src="./assets/img/1gb.png" alt="1GB" class="js-text--1gb">
+                <img src="./assets/img/slesh.png" alt="slash" class="js-text--slesh">
+                <img src="./assets/img/200.png" alt="200" class="js-text--200">
+                <img src="./assets/img/amd.png" alt="AMD" class="js-text--amd">
+              </div>
             </div>
           </div>
+          <div class="Inner--right">
+            <img src="./assets/img/details.png" alt="details" class="js-text--details">
+            <img src="./assets/img/girl.png" alt="girl" class="js-image--girl">
+          </div>
         </div>
-        <div class="Inner--right">
-          <img src="./assets/img/details.png" alt="details" class="js-text--details">
-          <img src="./assets/img/girl.png" alt="girl" class="js-image--girl">
+        <div class="Scene--second">
+          <img src="./assets/img/logo.png" alt="logo" class="js-image--logo">
         </div>
-      </div>
-      <div class="Scene--second">
-        <img src="./assets/img/logo.png" alt="logo" class="js-image--logo">
       </div>
     </div>
-  </div>
-
-  
+  </a>
+  <span class="js-btn--close">&times;</span>
   <script src="./assets/js/jquery.slim.min.js"></script>
   <script  type="application/javascript">
     $(document).ready(function() {
-      var anim = G2Anim0718();
-      anim.run();
+
+      $(window).on('resize', function() {
+        var $container = $('.Container');
+        $container.removeClass('animated');
+
+        setTimeout(function() {
+          $container.addClass('animated');
+        }, 10)
+      });
+
+      var $closeBtn = $('.js-btn--close');
+
+      $closeBtn.on('click', function(e) {
+        e.stopPropagation();
+
+        console.log('click close');
+
+        parent.postMessage('hideSG', '*');
+      });
     });
-
-    function G2Anim0718() {
-        var $txtPrepaid = $('.js-text--prepaid');
-        var $txtInetToday = $('.js-text--internet-today');
-        var $txtDaily = $('.js-text--daily');
-        var $txt1gb = $('.js-text--1gb');
-        var $txtSlash = $('.js-text--slash');
-        var $txt200 = $('.js-text--200');
-        var $txtAmd = $('.js-text--amd');
-        var $txtdetails = $('.js-text--details');
-
-      function run() {
-        console.log($txtPrepaid, $txtInetToday, $txtDaily, $txt1gb, $txtSlash, $txtAmd, $txtdetails);
-      }
-
-      return {
-        run: run
-      };
-
-    }
-
-
   </script>
 </body>
 </html>

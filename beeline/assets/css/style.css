@@ -6,6 +6,7 @@ html {
 }
 
 html * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -21,6 +22,31 @@ body {
   width: 100%;
   position: relative;
   overflow: hidden;
+}
+
+.js-btn--close {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  z-index: 10;
+  color: #000;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 31px;
+  font-weight: bold;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.js-btn--close:hover {
+  background: rgba(255, 235, 59, 0.5);
 }
 
 .Inner {
@@ -40,19 +66,48 @@ body {
   height: 120px;
 }
 
-
 /** Yellow Box Animation */
+
 .js-box--yellow {
+  visibility: hidden;
+}
+
+.animated .js-box--yellow {
+  visibility: visible;
   position: absolute;
   height: 60px;
   top: 39px;
+  background: -webkit-gradient(linear, left top, right top, from(#faa724), to(#ffe710));
+  background: -webkit-linear-gradient(left, #faa724, #ffe710);
+  background: -o-linear-gradient(left, #faa724, #ffe710);
   background: linear-gradient(to right, #faa724, #ffe710);
   overflow: hidden;
-
+  -webkit-animation-name: yellow-box-animation;
   animation-name: yellow-box-animation;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes yellow-box-animation {
+  5% {
+    opacity: 1;
+    width: 0;
+  }
+  10% {
+    width: 100%;
+  }
+  75% {
+    opacity: 1;
+    width: 100%;
+  }
+  80% {
+    opacity: 0;
+    width: 0;
+  }
 }
 
 @keyframes yellow-box-animation {
@@ -60,16 +115,13 @@ body {
     opacity: 1;
     width: 0;
   }
-
   10% {
     width: 100%;
   }
-
   75% {
     opacity: 1;
     width: 100%;
   }
-
   80% {
     opacity: 0;
     width: 0;
@@ -77,30 +129,53 @@ body {
 }
 
 /** Internet Today Animation */
+
 .js-text--internet-today {
+  visibility: hidden;
+}
+
+.animated .js-text--internet-today {
+  visibility: visible;
   position: absolute;
   right: 10px;
   top: 150px;
   opacity: 0;
-
+  -webkit-animation-name: internet-today-animation;
   animation-name: internet-today-animation;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
 
 /** Starting at 1s */
+
+@-webkit-keyframes internet-today-animation {
+  8% {
+    top: 150px;
+    opacity: 0;
+  }
+  13% {
+    top: 10px;
+    opacity: 1;
+  }
+  90% {
+    top: 10px;
+    opacity: 1;
+  }
+}
+
 @keyframes internet-today-animation {
   8% {
     top: 150px;
     opacity: 0;
   }
-
   13% {
     top: 10px;
     opacity: 1;
   }
-
   90% {
     top: 10px;
     opacity: 1;
@@ -111,53 +186,100 @@ body {
   position: relative;
 }
 
-
 /** Girl Animation */
+
 .js-image--girl {
+  visibility: hidden;
+}
+
+.animated .js-image--girl {
+  visibility: visible;
   position: absolute;
   top: 0;
   right: 0;
   height: 120px;
   opacity: 0;
-
+  -webkit-animation-name: girl-animation;
   animation-name: girl-animation;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes girl-animation {
+  5% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
 }
 
 @keyframes girl-animation {
   5% {
     opacity: 0;
   }
-
   10% {
     opacity: 1;
   }
-
   75% {
     opacity: 1;
   }
-
   80% {
     opacity: 0;
   }
 }
 
-
 /** Prepaid Animation */
+
 .js-text--prepaid {
+  visibility: hidden;
+}
+
+.animated .js-text--prepaid {
+  visibility: visible;
   position: absolute;
   right: 142px;
   opacity: 0;
   top: 12px;
-
+  -webkit-animation-name: prepaid-animation;
   animation-name: prepaid-animation;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes prepaid-animation {
+  14% {
+    top: -50px;
+    opacity: 0;
+  }
+  21% {
+    top: 12px;
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
 }
 
 @keyframes prepaid-animation {
@@ -165,65 +287,117 @@ body {
     top: -50px;
     opacity: 0;
   }
-
   21% {
     top: 12px;
     opacity: 1;
   }
-
   75% {
     opacity: 1;
   }
-
   80% {
     opacity: 0;
   }
 }
 
 /** Daily Animation */
+
 .js-text--daily {
+  visibility: hidden;
+}
+
+.animated .js-text--daily {
+  visibility: visible;
   position: absolute;
   left: 10px;
   opacity: 0;
   top: 56px;
-
+  -webkit-animation-name: daily-animation;
   animation-name: daily-animation;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes daily-animation {
+  22% {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  27% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
 }
 
 @keyframes daily-animation {
   22% {
     opacity: 0;
+    -webkit-transform: scale(0.9);
     transform: scale(0.9);
   }
-
   27% {
     opacity: 1;
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
-
   75% {
     opacity: 1;
   }
-
   80% {
     opacity: 0;
   }
 }
 
 .js-text--1gb {
+  visibility: hidden;
+}
+
+.animated .js-text--1gb {
+  visibility: visible;
   position: absolute;
   left: 160px;
   top: -60px;
   opacity: 0;
-
+  -webkit-animation-name: _1gb-animation;
   animation-name: _1gb-animation;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes _1gb-animation {
+  30% {
+    opacity: 0;
+    top: -60px;
+  }
+  32% {
+    opacity: 1;
+    top: calc(50% - 26px);
+  }
+  75% {
+    opacity: 1;
+    top: calc(50% - 26px);
+  }
+  80% {
+    opacity: 0;
+    top: calc(50% - 26px);
+  }
 }
 
 @keyframes _1gb-animation {
@@ -231,17 +405,14 @@ body {
     opacity: 0;
     top: -60px;
   }
-
   32% {
     opacity: 1;
     top: calc(50% - 26px);
   }
-
   75% {
     opacity: 1;
     top: calc(50% - 26px);
   }
-
   80% {
     opacity: 0;
     top: calc(50% - 26px);
@@ -249,52 +420,115 @@ body {
 }
 
 .js-text--slesh {
+  visibility: hidden;
+}
+
+.animated .js-text--slesh {
+  visibility: visible;
   position: absolute;
   left: 260px;
   top: calc(50% - 26px);
   opacity: 0;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
   transform: scale(0.5);
-
+  -webkit-animation-name: slesh-animation;
   animation-name: slesh-animation;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes slesh-animation {
+  30% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  32% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
 }
 
 @keyframes slesh-animation {
   30% {
     opacity: 0;
+    -webkit-transform: scale(0.5);
     transform: scale(0.5);
   }
-
   32% {
     opacity: 1;
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
-
   75% {
     opacity: 1;
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
-
   80% {
     opacity: 0;
+    -webkit-transform: scale(0.5);
     transform: scale(0.5);
   }
 }
 
 .js-text--200 {
+  visibility: hidden;
+}
+
+.animated .js-text--200 {
+  visibility: visible;
   position: absolute;
   left: 290px;
   top: 180px;
   opacity: 0;
-
+  -webkit-animation-name: _200-animation;
   animation-name: _200-animation;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes _200-animation {
+  30% {
+    opacity: 0;
+    top: 180px;
+  }
+  32% {
+    opacity: 1;
+    top: calc(50% - 26px);
+  }
+  75% {
+    opacity: 1;
+    top: calc(50% - 26px);
+  }
+  80% {
+    opacity: 0;
+    top: calc(50% - 26px);
+  }
 }
 
 @keyframes _200-animation {
@@ -302,17 +536,14 @@ body {
     opacity: 0;
     top: 180px;
   }
-
   32% {
     opacity: 1;
     top: calc(50% - 26px);
   }
-
   75% {
     opacity: 1;
     top: calc(50% - 26px);
   }
-
   80% {
     opacity: 0;
     top: calc(50% - 26px);
@@ -320,142 +551,254 @@ body {
 }
 
 .js-text--amd {
+  visibility: hidden;
+}
+
+.animated .js-text--amd {
+  visibility: visible;
   position: absolute;
   left: 385px;
   top: 30px;
   opacity: 0;
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
   transform: rotate(360deg);
-
+  -webkit-animation-name: amd-animation;
   animation-name: amd-animation;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes amd-animation {
+  35% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  40% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  75% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
 }
 
 @keyframes amd-animation {
   35% {
     opacity: 0;
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
   40% {
     opacity: 1;
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-
   75% {
     opacity: 1;
   }
-
   80% {
     opacity: 0;
   }
 }
 
 .js-text--details {
+  visibility: hidden;
+}
+
+.animated .js-text--details {
+  visibility: visible;
   position: absolute;
   top: -40px;
   left: 50%;
+  -webkit-transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0);
   transform: translate(-100%, 0);
   z-index: 2;
-
+  -webkit-animation-name: details-animation;
   animation-name: details-animation;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes details-animation {
+  42% {
+    top: -40px;
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+  47% {
+    top: 50%;
+    -webkit-transform: translate(-100%, -50%);
+    transform: translate(-100%, -50%);
+  }
+  75% {
+    opacity: 1;
+    top: 50%;
+    -webkit-transform: translate(-100%, -50%);
+    transform: translate(-100%, -50%);
+  }
+  80% {
+    opacity: 0;
+    top: -40px;
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
 }
 
 @keyframes details-animation {
   42% {
     top: -40px;
+    -webkit-transform: translate(-100%, 0);
     transform: translate(-100%, 0);
   }
-
   47% {
     top: 50%;
+    -webkit-transform: translate(-100%, -50%);
     transform: translate(-100%, -50%);
   }
-
   75% {
     opacity: 1;
     top: 50%;
+    -webkit-transform: translate(-100%, -50%);
     transform: translate(-100%, -50%);
   }
-
   80% {
     opacity: 0;
     top: -40px;
+    -webkit-transform: translate(-100%, 0);
     transform: translate(-100%, 0);
   }
 }
 
-.Scene--second {
+.animated .Scene--second {
   width: 100%;
   height: 120px;
   position: absolute;
   background: rgba(255, 255, 255, 0);
   z-index: 3;
-
+  -webkit-animation-name: scene-second-animation;
   animation-name: scene-second-animation;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
+}
+
+@-webkit-keyframes scene-second-animation {
+  60% {
+    background: rgba(255, 255, 255, 0);
+  }
+  65% {
+    background: rgba(255, 255, 255, 1);
+  }
+  95% {
+    background: rgba(255, 255, 255, 1);
+  }
+  100% {
+    background: rgba(255, 255, 255, 0);
+  }
 }
 
 @keyframes scene-second-animation {
   60% {
     background: rgba(255, 255, 255, 0);
   }
-
   65% {
     background: rgba(255, 255, 255, 1);
   }
-
   95% {
     background: rgba(255, 255, 255, 1);
   }
-
   100% {
     background: rgba(255, 255, 255, 0);
   }
 }
 
-.js-image--logo {
+.animated .js-image--logo {
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   opacity: 0;
   z-index: 4;
-
+  -webkit-animation-name: logo-animation;
   animation-name: logo-animation;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-duration: 13s;
   animation-duration: 13s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
+}
+
+@-webkit-keyframes logo-animation {
+  67% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0.9);
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  82% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  95% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0.9);
+    transform: translate(-50%, -50%) scale(0.9);
+  }
 }
 
 @keyframes logo-animation {
   67% {
     opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0.9);
     transform: translate(-50%, -50%) scale(0.9);
   }
-
   82% {
     opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
     transform: translate(-50%, -50%) scale(1);
   }
-
   95% {
     opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
     transform: translate(-50%, -50%) scale(1);
   }
-
   100% {
     opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(0.9);
     transform: translate(-50%, -50%) scale(0.9);
   }
 }
@@ -465,371 +808,587 @@ body {
 /*==========  Non-Mobile First Method  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1280px) {
-  .js-text--internet-today {
+
+@media only screen and (max-width: 1280px) {
+  .animated .js-text--internet-today {
     width: 300px;
   }
-
-  .js-text--prepaid {
+  .animated .js-text--prepaid {
     right: 100px;
   }
-
-
-  .js-text--details {
+  .animated .js-text--details {
     position: absolute;
     top: -40px;
     left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
     z-index: 2;
-  
+    -webkit-animation-name: details-animation-1280;
     animation-name: details-animation-1280;
+    -webkit-animation-duration: 13s;
     animation-duration: 13s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
   }
-  
-  @keyframes details-animation-1280 {
+  @-webkit-keyframes details-animation-1280 {
     42% {
       top: -40px;
+      -webkit-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
     }
-  
     47% {
       top: 50%;
+      -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
-  
     75% {
       opacity: 1;
       top: 50%;
+      -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
-  
     80% {
       opacity: 0;
       top: -40px;
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+  }
+  @keyframes details-animation-1280 {
+    42% {
+      top: -40px;
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+    47% {
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    75% {
+      opacity: 1;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    80% {
+      opacity: 0;
+      top: -40px;
+      -webkit-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
     }
   }
 }
 
-@media only screen and (max-width : 1120px) {
-  .js-image--girl {
+@media only screen and (max-width: 1120px) {
+  .animated .js-image--girl {
     right: -30px;
   }
-
-  .js-text--daily {
+  .animated .js-text--daily {
     left: calc(50% - 50px);
     width: 120px;
     top: 10px;
   }
-
-  .js-text--1gb {
+  .animated .js-text--1gb {
     opacity: 0;
     top: 50px;
     left: calc(50% - 100px);
-
+    -webkit-animation-name: _1gb-animation-1120;
     animation-name: _1gb-animation-1120;
+    -webkit-animation-duration: 13s;
     animation-duration: 13s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
   }
-
+  @-webkit-keyframes _1gb-animation-1120 {
+    30% {
+      opacity: 0;
+      top: -50px;
+    }
+    32% {
+      opacity: 1;
+      top: calc(50% - 16px);
+    }
+    75% {
+      opacity: 1;
+      top: calc(50% - 16px);
+    }
+    80% {
+      opacity: 0;
+      top: calc(50% - 16px);
+    }
+  }
   @keyframes _1gb-animation-1120 {
     30% {
       opacity: 0;
       top: -50px;
     }
-  
     32% {
       opacity: 1;
       top: calc(50% - 16px);
     }
-  
     75% {
       opacity: 1;
       top: calc(50% - 16px);
     }
-  
     80% {
       opacity: 0;
       top: calc(50% - 16px);
     }
   }
-
-  .js-text--slesh {
+  .animated .js-text--slesh {
     top: 45px;
     left: 50%;
   }
-
-  .js-text--200 {
+  .animated .js-text--200 {
     top: 170px;
     left: calc(50% + 30px);
     opacity: 0;
-
+    -webkit-animation-name: _200-animation-1120;
     animation-name: _200-animation-1120;
+    -webkit-animation-duration: 13s;
     animation-duration: 13s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
   }
-
+  @-webkit-keyframes _200-animation-1120 {
+    30% {
+      opacity: 0;
+      top: 170px;
+    }
+    32% {
+      opacity: 1;
+      top: calc(50% - 16px);
+    }
+    75% {
+      opacity: 1;
+      top: calc(50% - 16px);
+    }
+    80% {
+      opacity: 0;
+      top: calc(50% - 16px);
+    }
+  }
   @keyframes _200-animation-1120 {
     30% {
       opacity: 0;
       top: 170px;
     }
-  
     32% {
       opacity: 1;
       top: calc(50% - 16px);
     }
-  
     75% {
       opacity: 1;
       top: calc(50% - 16px);
     }
-  
     80% {
       opacity: 0;
       top: calc(50% - 16px);
     }
   }
-
-  .js-text--amd {
+  .animated .js-text--amd {
     top: 50px;
     left: calc(50% + 130px);
   }
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
 
-  .js-text--internet-today {
+@media only screen and (max-width: 992px) {
+  .animated .js-text--internet-today {
     width: calc(90% - 10px);
   }
-
-  .js-image--girl {
+  .animated .js-image--girl {
     right: -40px;
   }
-
-  .js-box--yellow {
+  .animated .js-box--yellow {
     height: 50px;
   }
-
-  .js-text--prepaid {
+  .animated .js-text--prepaid {
     left: auto;
     right: 10px;
   }
-
-  .js-text--details {
+  .animated .js-text--details {
     width: 180px;
   }
 }
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
-  .js-text--prepaid {
+
+@media only screen and (max-width: 768px) {
+  .animated .js-text--prepaid {
     width: 180px;
   }
-
-  .js-box--yellow {
+  .animated .js-box--yellow {
     height: 44px;
   }
-
-  .js-text--daily {
+  .animated .js-text--daily {
     width: 100px;
   }
-
-  .js-text--1gb {
+  .animated .js-text--1gb {
     width: 60px;
   }
-
-  .js-text--slesh {
+  .animated .js-text--slesh {
     width: 20px;
   }
-
-  .js-text--200 {
+  .animated .js-text--200 {
     width: 54px;
   }
-
-  
-
-  .js-text--1gb {
+  .animated .js-text--1gb {
     position: absolute;
     left: 50%;
+    -webkit-transform: translate(-72px, 0);
+    -ms-transform: translate(-72px, 0);
     transform: translate(-72px, 0);
     top: -60px;
     opacity: 0;
-  
+    -webkit-animation-name: _1gb-animation-768;
     animation-name: _1gb-animation-768;
+    -webkit-animation-duration: 13s;
     animation-duration: 13s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
   }
-  
+  @-webkit-keyframes _1gb-animation-768 {
+    30% {
+      opacity: 0;
+      top: -60px;
+    }
+    32% {
+      opacity: 1;
+      top: 45px;
+    }
+    75% {
+      opacity: 1;
+      top: 45px;
+    }
+    80% {
+      opacity: 0;
+      top: 45px;
+    }
+  }
   @keyframes _1gb-animation-768 {
     30% {
       opacity: 0;
       top: -60px;
     }
-  
     32% {
       opacity: 1;
       top: 45px;
     }
-  
     75% {
       opacity: 1;
       top: 45px;
     }
-  
     80% {
       opacity: 0;
       top: 45px;
     }
   }
-  
-  .js-text--slesh {
+  .animated .js-text--slesh {
     position: absolute;
     left: 50%;
+    -webkit-transform: translate(-69px, 0) scale(0.5);
+    -ms-transform: translate(-69px, 0) scale(0.5);
     transform: translate(-69px, 0) scale(0.5);
     top: 45px;
     opacity: 0;
-
+    -webkit-animation-name: slesh-animation-768;
     animation-name: slesh-animation-768;
+    -webkit-animation-duration: 13s;
     animation-duration: 13s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
   }
-  
+  @-webkit-keyframes slesh-animation-768 {
+    30% {
+      opacity: 0;
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+    }
+    32% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+    75% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+    80% {
+      opacity: 0;
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+    }
+  }
   @keyframes slesh-animation-768 {
     30% {
       opacity: 0;
+      -webkit-transform: scale(0.5);
       transform: scale(0.5);
     }
-  
     32% {
       opacity: 1;
+      -webkit-transform: scale(1);
       transform: scale(1);
     }
-  
     75% {
       opacity: 1;
+      -webkit-transform: scale(1);
       transform: scale(1);
     }
-  
     80% {
       opacity: 0;
+      -webkit-transform: scale(0.5);
       transform: scale(0.5);
     }
   }
-  
-  .js-text--200 {
+  .animated .js-text--200 {
     position: absolute;
     left: 50%;
+    -webkit-transform: translate(27px, 0);
+    -ms-transform: translate(27px, 0);
     transform: translate(27px, 0);
     top: 180px;
     opacity: 0;
-  
+    -webkit-animation-name: _200-animation-768;
     animation-name: _200-animation-768;
+    -webkit-animation-duration: 13s;
     animation-duration: 13s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
   }
-  
+  @-webkit-keyframes _200-animation-768 {
+    30% {
+      opacity: 0;
+      top: 180px;
+    }
+    32% {
+      opacity: 1;
+      top: 45px;
+    }
+    75% {
+      opacity: 1;
+      top: 45px;
+    }
+    80% {
+      opacity: 0;
+      top: 45px;
+    }
+  }
   @keyframes _200-animation-768 {
     30% {
       opacity: 0;
       top: 180px;
     }
-  
     32% {
       opacity: 1;
       top: 45px;
     }
-  
     75% {
       opacity: 1;
       top: 45px;
     }
-  
     80% {
       opacity: 0;
       top: 45px;
     }
   }
-  
-  .js-text--amd {
+  .animated .js-text--amd {
     position: absolute;
     left: 50%;
+    -webkit-transform: translate(85px, 0) rotate(360deg);
+    -ms-transform: translate(85px, 0) rotate(360deg);
     transform: translate(85px, 0) rotate(360deg);
     top: 40px;
     opacity: 0;
     width: 15px;
     height: 15px;
-  
+    -webkit-animation-name: amd-animation-768;
     animation-name: amd-animation-768;
+    -webkit-animation-duration: 13s;
     animation-duration: 13s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
   }
-  
-  @keyframes amd-animation-768 {
+  @-webkit-keyframes amd-animation-768 {
     35% {
       opacity: 0;
-      transform: translate(85px, 0) rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
     }
-  
     40% {
       opacity: 1;
-      transform: translate(85px, 0) rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
     }
-  
     75% {
       opacity: 1;
     }
-  
+    80% {
+      opacity: 0;
+    }
+  }
+  @keyframes amd-animation-768 {
+    35% {
+      opacity: 0;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    40% {
+      opacity: 1;
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+    75% {
+      opacity: 1;
+    }
     80% {
       opacity: 0;
     }
   }
 }
 
-@media only screen and (max-width : 593px) {
+@media only screen and (max-width: 593px) {
   .Scene--first .Inner--left,
   .Scene--first .Inner--center {
     width: 50%;
   }
-
   .Scene--first .Inner--right {
     width: 0;
   }
-
-  .js-text--1gb,
-  .js-text--slesh,
-  .js-text--200,
-  .js-text--amd,
-  .js-text--daily {
+  .animated .js-text--1gb,
+  .animated .js-text--slesh,
+  .animated .js-text--200,
+  .animated .js-text--amd,
+  .animated .js-text--daily {
     z-index: 2;
   }
-
-  .js-text--details {
+  .animated .js-text--details {
     display: none;
   }
+  .animated .js-image--girl {
+    opacity: 0.5;
+    -webkit-animation-name: girl-animation-593;
+    animation-name: girl-animation-593;
+    -webkit-animation-duration: 13s;
+    animation-duration: 13s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  @-webkit-keyframes girl-animation-593 {
+    to {
+      opacity: 0.5;
+    }
+  }
+  @keyframes girl-animation-593 {
+    to {
+      opacity: 0.5;
+    }
+  }
 }
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {
 
-}
+/* Extra Small Devices, Phones */
 
-/* Custom, iPhone Retina */ 
-@media only screen and (max-width : 320px) {
-
+@media only screen and (max-width: 480px) {
+  .Inner--left {
+    width: 45%;
+  }
+  .Inner--right {
+    width: 55%;
+  }
+  .animated .js-text--prepaid {
+    width: 150px;
+  }
+  .animated .js-text--1gb {
+    -webkit-transform: translate(-75px, 0);
+    -ms-transform: translate(-75px, 0);
+    transform: translate(-75px, 0);
+  }
+  .animated .js-text--slesh {
+    left: calc(50% - 10px);
+  }
+  .animated .js-text--200 {
+    -webkit-transform: translate(15px, 0);
+    -ms-transform: translate(15px, 0);
+    transform: translate(15px, 0);
+  }
+  .animated .js-text--amd {
+    -webkit-transform: translate(68px, 0) rotate(360deg);
+    -ms-transform: translate(68px, 0) rotate(360deg);
+    transform: translate(68px, 0) rotate(360deg);
+    -webkit-animation-name: amd-animation-480;
+    animation-name: amd-animation-480;
+  }
+  @-webkit-keyframes amd-animation-480 {
+    35% {
+      opacity: 0;
+      -webkit-transform: translate(68px, 0) rotate(0deg);
+      transform: translate(68px, 0) rotate(0deg);
+    }
+    40% {
+      opacity: 1;
+      -webkit-transform: translate(68px, 0) rotate(360deg);
+      transform: translate(68px, 0) rotate(360deg);
+    }
+    75% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+  }
+  @keyframes amd-animation-480 {
+    35% {
+      opacity: 0;
+      -webkit-transform: translate(68px, 0) rotate(0deg);
+      transform: translate(68px, 0) rotate(0deg);
+    }
+    40% {
+      opacity: 1;
+      -webkit-transform: translate(68px, 0) rotate(360deg);
+      transform: translate(68px, 0) rotate(360deg);
+    }
+    75% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+  }
 }
